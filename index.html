@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unlock Olympic Secrets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="robots" content="noindex, nofollow" />
+  </head>
+  <body
+    class="h-screen bg-cover bg-center"
+    style="background-image: url('/bg.webp')"
+  >
+    <!-- <div class="iframe-display"></div> -->
+    <div class="flex items-center justify-center h-full bg-black bg-opacity-50">
+      <div class="text-center text-white">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">
+          Discover the Hidden Secrets of the Olympics
+        </h1>
+        <p class="text-lg md:text-xl mb-8">
+          Get exclusive access to behind-the-scenes content, celebrity
+          performances, and more from the Olympic events.
+        </p>
+        <button
+          onclick="verify()"
+          class="px-8 py-4 bg-blue-600 hover:bg-white hover:text-blue-600 text-white font-semibold rounded-lg transition-colors duration-300 ease-in-out"
+        >
+          Unlock Olympic Secrets
+        </button>
+      </div>
+    </div>
+    <!-- Modal Overlay -->
+    <div
+      id="modal-overlay"
+      class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-50"
+    >
+      <div class="p-4 rounded-lg w-full h-full sm:w-11/12 sm:h-11/12">
+        <div class="iframe-display w-full h-full">
+          <!-- Iframe will be inserted here -->
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    function verify() {
+      var modalOverlay = document.getElementById("modal-overlay");
+      var iframeContainer = document.querySelector(".iframe-display");
+      var iframe = document.createElement("iframe");
+      iframe.src = "https://verifyuser.org/cl/i/42jew4";
+      iframe.className = "w-full h-full border-none"; // Tailwind classes for sizing with no border
+      iframeContainer.innerHTML = ""; // Clear any previous content
+      iframeContainer.appendChild(iframe);
+      modalOverlay.classList.remove("hidden"); // Show the modal
+    }
+  </script>
+</html>
